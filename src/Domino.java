@@ -54,23 +54,29 @@ public class Domino
     public int compareTo(Domino other)
     {
         int thisSmallest;
-        if(this.bottom < this.top)
+        int thisLargest;
+        if(this.bottom < this.top || this.bottom == this.top)
         {
             thisSmallest = this.bottom;
+            thisLargest = this.top;
         }
         else
         {
             thisSmallest = this.top;
+            thisLargest = this.bottom;
         }
 
         int otherSmallest;
-        if(other.getBottom() < other.getTop())
+        int otherLargest;
+        if(other.getBottom() < other.getTop() || other.getBottom() == other.getTop())
         {
             otherSmallest = other.getBottom();
+            otherLargest = other.getTop();
         }
         else
         {
             otherSmallest = other.getTop();
+            otherLargest = other.getBottom();
         }
 
         if(thisSmallest < otherSmallest)
@@ -78,6 +84,15 @@ public class Domino
             return -1;
         }
         else if(thisSmallest > otherSmallest)
+        {
+            return 1;
+        }
+
+        if(thisLargest < otherLargest)
+        {
+            return -1;
+        }
+        else if(thisLargest > otherLargest)
         {
             return 1;
         }
