@@ -5,8 +5,16 @@ public class DominoPile
 {
     ArrayList<Domino> pile;
 
-    public DominoPile(ArrayList<Domino> pile) {
+    public DominoPile() {
         this.pile = new ArrayList<>();
+    }
+
+    public ArrayList<Domino> getPile() {
+        return pile;
+    }
+
+    public void setPile(ArrayList<Domino> pile) {
+        this.pile = pile;
     }
 
     public void newStack6()
